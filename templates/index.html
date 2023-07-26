@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petroleum Price Forcaster</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://css.gg/css?=|code-slash" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        font-size: 62.5%;
+    }
+
+    .container {
+        height: 100vh;
+        width: 100%;
+        background-color: black;
+    }
+
+    .content {
+        display: flex;
+        height:85vh;
+    }
+
+    .petrol {
+        color: grey;
+        font-weight: bold;
+        font-size: 2.5rem;
+        text-align: center;
+        padding-top: 6rem;
+    }
+
+    .leftcontent {
+        width: 50vw;
+        color: white;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .leftcontent p {
+        color: grey;
+        font-size: 1.8rem;
+        width: 40vw;
+        margin: 1rem 0;
+
+    }
+
+    .des {
+        position: absolute;
+        top: 25%;
+        left: 25%;
+    }
+
+    .des h1 {
+        font-size: 3rem;
+    }
+
+    .des h1 {
+        border-right: 4px solid white;
+        animation: character 4s steps(18) infinite;
+        white-space: nowrap;
+        overflow: hidden;
+
+    }
+
+    .name {
+        color: purple;
+    }
+
+    .icons {
+        color: grey;
+        font-size: 0.8em;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #instagram,
+    #linkdin,
+    #github {
+        font-size: 4em;
+        margin: 10px 5px;
+        color: grey;
+
+    }
+
+    #instagram:hover,
+    #linkdin:hover,
+    #github:hover {
+        color: plum;
+    }
+
+    .rightcontent {
+        width: 50vw;
+        color: white;
+    }
+
+    @keyframes character {
+        0% {
+            width: 0ch;
+        }
+
+        100% {
+            width: 21ch;
+        }
+    }
+
+    .price {
+        font-size: 2.2rem;
+        color: purple;
+    }
+
+    .rightcontent {
+        position: relative;
+    }
+
+    form {
+        position: absolute;
+        top: 15%;
+        right: 25%;
+        border-radius: 8px;
+        width: auto;
+        height: 50vh;
+        border: 3px solid white;
+        padding: 2rem;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+   
+    .form {
+        position: relative;
+        padding: 1rem 0;
+    }
+
+    .textbox {
+        border: 3px solid white;
+        border-radius: 5px;
+        outline: none;
+        background: none;
+        padding: 10px;
+        color: white;
+        width: 10vw;
+        margin-left:0.6rem;
+        height: 5vh;
+    }
+    .form-label{
+        position: absolute;
+        font-size: 2rem;
+        top: 1.5rem;
+        left: 1.4rem;
+        cursor: text;
+        transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+    }
+    .textbox:focus{
+        border: 2px solid purple;
+    }
+    .textbox:focus ~ .form-label,
+    .textbox:not(:placeholder-shown).textbox:not(:focus)~.form-label
+    {
+        top: 0rem;
+        font-size: 1.8rem;
+        left: 1rem;
+        background: black;
+    }
+    .flex{
+        display: flex;
+    }
+    .f1{
+        margin-right: 1rem;
+    }
+    .box2{
+        width:21vw;
+        margin-bottom: 1rem;
+    }
+
+    .sub{
+        width: 8vw;
+        font-size: 2rem;
+        color: white;
+        background:none;
+        margin-top: 2rem;
+        padding: 0.4rem;
+        margin-bottom: 5.5rem;
+        border: 2px solid white;
+        cursor: pointer;
+        transition: 0.5s
+    }
+    .btn2:hover{
+        background-color: purple;
+    }
+    .predictor{
+        align-items: center;
+        color: plum;
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+    .flexalign{
+        display: flex;
+        width: 23vw;
+        align-items: center;
+        justify-content: center;
+    }
+    .result{
+        color: white;
+    }
+    
+
+
+
+
+
+
+
+
+    @media (max-width:768px) {
+        html{
+            font-size: 50%;
+        }
+        .container{
+            height: 130vh;
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+        }
+        .leftcontent{
+            flex-basis: 100%;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .rightcontent{
+            flex-basis: 100%;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        form{
+            height:auto;
+            width: 65vw;
+            top: auto;
+            left: 20%;
+        }
+        .textbox{
+            width: 25vw;
+        }
+        .des{
+            top: auto;
+            left: 20%;
+        }
+        .des p{
+            width: 65vw;
+        }
+        .btn{
+            width: auto;
+        }
+        .flexalign{
+            width: auto;
+        }
+        .form{
+            width: auto;
+        }
+        .box2{
+            width:53vw;
+        }
+    }
+
+
+
+    @media (min-width:768px) and (max-width:1150px) {
+        html{
+            font-size: 55%;
+        }
+        .des p{
+            width: 25vw;
+        }
+        form{
+            width: 30vw;
+        }
+        .des{
+            top: 15%;
+        }
+    }
+    @media (min-width:100px) and (max-width:400px) {
+        html{
+            font-size: 45%;
+        }
+        .des{
+            top: 15%;
+        }
+        form{
+            width: 68vw;
+            top: 30%;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h2 class="petrol">Petrol Price Forcasting Model</h2>
+        <div class="content">
+            <div class="leftcontent">
+                <div class="des">
+                    <h1>I am <span class="name">Meet Chaklasiya</span><span class="pointer"></span></h1>
+                    <p>Petrol Price Forcaster is a tool Created by Meet Chaklasiya, Final Year student at Pandit
+                        Deendayal Energy University. This tool is basically designed to forcast the Petroleum Price
+                        which has an accuracy of 99% based on the dataset. The user just have to enter the Date, Month
+                        and Year the model will automatically Predict the price, model is created with Machine
+                        algorithm and then connected with Flask for deployment on the website.</p>
+                    <div class="icons">
+                        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+                            rel="stylesheet" />
+                        <a href="https://www.instagram.com/meet_chaklasiya/"><i class="fa fa-instagram" id="instagram"
+                                aria-hidden="true"></i></a>
+                        <link rel="stylesheet"
+                            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                        <a href="https://www.linkedin.com/in/meet-chaklasiya-6b29451b9/"><i
+                                class="fa fa-linkedin-square" id="linkdin"></i></a>
+                        <a href='https://github.com/meetchaklasiya'><i class="fa fa-github" id="github"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="rightcontent">
+
+                <form action="{{ url_for('predict_datapoint')}}" method="post">
+                    <div class="flexalign">
+                        <h1 class="predictor"> Price Predictor</h1>
+                    </div>
+                    
+                    <div class="flex">
+                        <div class="form f1">
+                            <input type="number" name="date" value="date" min="1" max="31" placeholder=" " class="textbox">
+                            <Label class="form-label">Date</Label>
+                        </div>
+                        <div class="form f2">
+                            <input type="number" name="month" value="month" min="1" max="12" placeholder=" " class="textbox box1">
+                            <label class="form-label">Month</label>
+                        </div>
+                    </div>
+                    <div class="form f3">
+                        <input type="number" min="1" name="year" value="year" placeholder=" " class="textbox box2">
+                        <Label class="form-label">Year</Label>
+                    </div>
+                    <div class="flexalign"> 
+                        <div class="cont">
+                            <button name="submit" class="sub btn btn2">Predict</button>
+                        </div>
+                    </div>
+                    
+                    <h2 class="price" id="show">The Price of the Petrol will be<span class="result"> {{results}}</span></h2>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+</script>
+
+</html>
